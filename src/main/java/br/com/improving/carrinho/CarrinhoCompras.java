@@ -76,11 +76,8 @@ public class CarrinhoCompras {
 		  this.itens.remove(item);
 
 		  removeu = true;
-		  System.out.println(removeu);
-		  return removeu;
 		}
 	  }
-	  System.out.println(removeu);
 	  return removeu;
     }
 
@@ -94,14 +91,12 @@ public class CarrinhoCompras {
      * caso o produto não exista no carrinho.
      */
     public boolean removerItem(int posicaoItem) {
-	  boolean removeu = false;
 
 	  if (posicaoItem >= 0 && posicaoItem <= itens.size()) {
 	  	itens.remove(posicaoItem);
-		removeu = true;
-		return removeu;
+		return true;
 	  }
-	  return removeu;
+	  return false;
     }
 
     /**

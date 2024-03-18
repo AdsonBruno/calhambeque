@@ -1,5 +1,7 @@
 package br.com.improving.carrinho;
 
+import br.com.improving.carrinho.exceptions.ValorInvalidoException;
+
 import java.math.BigDecimal;
 
 /**
@@ -45,9 +47,8 @@ public class Item {
 	public void setValorUnitario(BigDecimal valorUnitario) {
 		if (valorUnitario.compareTo(BigDecimal.ZERO) <= 0) {
 			throw new RuntimeException("Valores negativos não são permitidos");
-		} else {
-			this.valorUnitario = valorUnitario;
 		}
+		this.valorUnitario = valorUnitario;
 
 	}
     /**
@@ -60,6 +61,9 @@ public class Item {
     }
 
 	public void setQuantidade(int quantidade) {
+	  if (quantidade < 0) {
+		  throw new ValorInvalidoException("A quantidade não pode ser negativa");
+	  }
 	  this.quantidade = quantidade;
 	}
     /**

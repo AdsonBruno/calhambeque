@@ -31,10 +31,9 @@ public class CarrinhoComprasFactory {
 		CarrinhoCompras novoCarrinho = new CarrinhoCompras();
 		carrinhosPorCliente.put(identificacaoCliente, novoCarrinho);
 		return novoCarrinho;
-	  } else {
-		System.out.println(carrinhosPorCliente.get(identificacaoCliente));
-		return  carrinhosPorCliente.get(identificacaoCliente);
 	  }
+
+	  return  carrinhosPorCliente.get(identificacaoCliente);
     }
 
     /**
@@ -54,7 +53,6 @@ public class CarrinhoComprasFactory {
 		somaTotal = somaTotal.add(carrinho.getValorTotal());
 	  }
 	  BigDecimal media = somaTotal.divide(BigDecimal.valueOf(numCarrinhos), 2, RoundingMode.HALF_UP);
-	  System.out.printf("Soma total: R$ %.2f", media);
 	  return media;
     }
 
@@ -72,9 +70,7 @@ public class CarrinhoComprasFactory {
 	  if (carrinhosPorCliente.containsKey(identificacaoCliente)) {
 		  carrinhosPorCliente.remove(identificacaoCliente);
 		  processado = true;
-		  return processado;
-		} else {
-		  return processado;
 		}
+	  return processado;
     }
 }

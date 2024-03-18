@@ -22,6 +22,7 @@ release.properties
 
 
 # Idea
+.idea
 *.iml
 **/.idea/*
 !.idea/codeStyleSettings.xml
